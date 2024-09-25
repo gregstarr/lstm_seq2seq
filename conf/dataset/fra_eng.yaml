@@ -1,0 +1,5 @@
+defaults:
+  - dataset_base
+
+url: http://www.manythings.org/anki/fra-eng.zip
+data_path: fra.txt

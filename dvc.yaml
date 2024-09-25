@@ -1,17 +1,19 @@
 stages:
+
   download:
     cmd:
-    - curl -O http://www.manythings.org/anki/fra-eng.zip
+    - curl -O ${dataset.url}
     - unzip fra-eng.zip
     - rm _about.txt fra-eng.zip
     deps:
-    - http://www.manythings.org/anki/fra-eng.zip
+    - ${dataset.url}
     outs:
-    - fra.txt
+    - ${dataset.data_path}
+
   train:
     cmd: python train.py
     deps:
-    - fra.txt
+    - ${dataset.data_path}
     - train.py
     params:
     - params.yaml:
@@ -22,6 +24,7 @@ stages:
         cache: false
     - results/plots:
         cache: false
+
 params:
 - results/params.yaml
 metrics:
@@ -31,5 +34,5 @@ plots:
     x: step
 artifacts:
   best:
-    path: results/artifacts/epoch=0-step=2.ckpt
+    path: results/artifacts/epoch=1-step=314.ckpt
     type: model

@@ -1,5 +1,5 @@
 defaults:
   - model: small
-data_path: fra.txt
-num_samples: 100000
+  - dataset: fra_eng
+  - _self_
 seed: 423

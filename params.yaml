@@ -5,6 +5,8 @@ model:
   max_epochs: 2
   optim:
     lr: 0.01
-data_path: fra.txt
-num_samples: 10000
+dataset:
+  num_samples: 100000
+  data_path: fra.txt
+  url: http://www.manythings.org/anki/fra-eng.zip
 seed: 423
