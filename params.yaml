@@ -10,3 +10,4 @@ dataset:
   data_path: fra.txt
   url: http://www.manythings.org/anki/fra-eng.zip
 seed: 423
+greg: false

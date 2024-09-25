@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import torch
 import lightning as L 
@@ -80,6 +81,21 @@ class CustomDataset(torch.utils.data.Dataset):
 
 
 if __name__ == "__main__":
+    if os.getenv("DVC_EXP_BASELINE_REV", None):
+        print("RUNNING BEHIND `dvc exp run`")
+    else:
+        from dvc.utils.hydra import compose_and_dump
+        print("RUNNING NORMALLY: DUMPING PARAMS")
+        root_dir = os.path.abspath(os.path.dirname(__file__))
+        compose_and_dump(
+            os.path.join(root_dir, "params.yaml"),
+            os.path.join(root_dir, "conf"),
+            None,
+            "config",
+            root_dir,
+            None,
+        )
+
     params = OmegaConf.load("params.yaml")
     
     # Vectorize the data.

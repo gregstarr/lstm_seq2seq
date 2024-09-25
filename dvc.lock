@@ -24,14 +24,15 @@ stages:
       size: 35036312
     - path: train.py
       hash: md5
-      md5: 0ab8a8eb7f3229bb978d8e067d1dd45f
-      size: 7467
+      md5: acc86e3feeb90a4a25735da8af29acfb
+      size: 7958
     params:
       params.yaml:
         dataset:
           num_samples: 100000
           data_path: fra.txt
           url: http://www.manythings.org/anki/fra-eng.zip
+        greg: false
         model:
           batch_size: 512
           latent_dim: 8
@@ -43,20 +44,20 @@ stages:
     outs:
     - path: model
       hash: md5
-      md5: a9389d429540886840e4606a675281a4.dir
+      md5: d2d9e4a34db1ffe03ea303500afcc187.dir
       size: 19634
       nfiles: 1
     - path: results/artifacts
       hash: md5
-      md5: a9389d429540886840e4606a675281a4.dir
+      md5: d2d9e4a34db1ffe03ea303500afcc187.dir
       size: 19634
       nfiles: 1
     - path: results/metrics.json
       hash: md5
-      md5: 1e254c560409d9344714508971423f5d
-      size: 365
+      md5: bca58227ea55c21f5e48f6cbdde63f14
+      size: 366
     - path: results/plots
       hash: md5
-      md5: 073c169201f87671cb367930fcc90112.dir
+      md5: cafc42e12f63dac7e9edc8ea592b28da.dir
       size: 596
       nfiles: 7
